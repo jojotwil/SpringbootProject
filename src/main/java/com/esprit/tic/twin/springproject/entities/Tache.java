@@ -22,11 +22,12 @@ public class Tache implements Serializable {
 
     @Column(name = "tarifHoraire")
     private float tarifHoraire;
-
+    @Enumerated(EnumType.STRING)
     @Column(name = "typeTache")
     private TypeTache typeTache;
 
     @ManyToOne
     private Etudiant etudiant;
-
+    @OneToOne(mappedBy = "tache")
+    private Etudiant etudiantt;
 }

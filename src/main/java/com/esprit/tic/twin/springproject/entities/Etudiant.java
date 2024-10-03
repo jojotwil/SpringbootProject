@@ -31,11 +31,14 @@ public class Etudiant implements Serializable {
     @Column(name = "dateNaissance")
     private Date dateNaissance;
 
-
+    @Enumerated(EnumType.STRING)
+    @Column(name = "typeEtudiant")
+    private typeEtudiant typeEtudiant;
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Reservation> reservations;
 
    @OneToMany(cascade = CascadeType.ALL,mappedBy = "etudiant")
     private Set<Tache> taches;
-
+    @OneToOne
+    private Tache tache;
 }
