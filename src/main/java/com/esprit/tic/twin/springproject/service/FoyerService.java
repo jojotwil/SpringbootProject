@@ -2,33 +2,11 @@ package com.esprit.tic.twin.springproject.service;
 
 import com.esprit.tic.twin.springproject.entities.Foyer;
 import com.esprit.tic.twin.springproject.repositories.FoyerRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-public class FoyerService implements IFoyerService{
-    FoyerRepository foyerRepository;
-    @Override
-    public List<Foyer> retrieveALLFoyers() {
-        return foyerRepository.findAll();
-    }
-
-    @Override
-    public Foyer addFoyer(Foyer f) {
-        return foyerRepository.save(f);
-    }
-
-    @Override
-    public Foyer updateFoyer(Foyer f) {
-        return foyerRepository.save(f);
-    }
-
-    @Override
-    public Foyer retrieveFoyer(Long idFoyer) {
-        return foyerRepository.findById(idFoyer).orElse(null);
-    }
-
-    @Override
-    public void removeFoyer(Long idFoyer) {
-    foyerRepository.deleteById(idFoyer);
-    }
+@Service
+@AllArgsConstructor
+public class FoyerService implements IFoyerService {
 }
