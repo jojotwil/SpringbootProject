@@ -1,24 +1,34 @@
 package com.esprit.tic.twin.springproject.entities;
 
 import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @Table( name = "Bloc")
+@ToString
+@EqualsAndHashCode
+@Builder
 public class Bloc implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idBloc")
-    private long idBloc;
+     long idBloc;
     @Column(name="nomBloc")
-    private String nomBloc;
+     String nomBloc;
     @Column(name="capaciteBloc")
-    private long capaciteBloc;
+     long capaciteBloc;
 
     @ManyToOne
-    private Foyer foyer;
+     Foyer foyer;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="bloc")
     private Set<Chambre> chambres;
