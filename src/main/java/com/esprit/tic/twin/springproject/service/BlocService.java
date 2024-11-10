@@ -11,5 +11,24 @@ import java.util.List;
 @AllArgsConstructor
 public class BlocService implements IBlocService{
     BlocRepository blocRepository;
-
+    @Override
+    public List<Bloc> retrieveAllBlocs() {
+        return blocRepository.findAll();
+    }
+    @Override
+    public Bloc addBloc(Bloc f) {
+        return blocRepository.save(f);
+    }
+    @Override
+    public Bloc updateBloc(Bloc f) {
+        return blocRepository.save(f);
+    }
+    @Override
+    public Bloc retrieveBloc(Long idBloc) {
+        return blocRepository.findById(idBloc).orElse(null);
+    }
+    @Override
+    public void removeBloc(Long idBloc) {
+        blocRepository.deleteById(idBloc);
+    }
 }
