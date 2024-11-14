@@ -34,4 +34,15 @@ public class BlocController {
     public void removeBloc(@PathVariable("bloc-id") Long blocId) {
         blocService.removeBloc(blocId);
     }
+
+    @GetMapping("/find-bloc-keyword/{universityName}")
+    public List<Bloc> findBlocsByUniversityName(@PathVariable("universityName") String universityName) {
+        return blocService.findBlocsByUniversityName(universityName);
+    }
+
+    // http://localhost:8090/projet/bloc/find-bloc-jpql
+    @GetMapping("/find-bloc-jpql/{universityName}")
+    public List<Bloc> retrieveBlocByUniversity(@PathVariable("universityName") String universityName) {
+        return blocService.retrieveBlocByUniversity(universityName);
+    }
 }

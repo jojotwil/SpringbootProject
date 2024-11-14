@@ -31,4 +31,13 @@ public class BlocService implements IBlocService{
     public void removeBloc(Long idBloc) {
         blocRepository.deleteById(idBloc);
     }
+    @Override
+    public List<Bloc> findBlocsByUniversityName(String nom) {
+        return blocRepository.findByFoyerUniversiteNomUniversite(nom);
+    }
+
+    @Override
+    public List<Bloc> retrieveBlocByUniversity(String nom) {
+        return blocRepository.retrieveBlocByUniversite(nom);
+    }
 }
