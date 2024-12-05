@@ -1,8 +1,10 @@
 package com.esprit.tic.twin.springproject.service;
 
 import com.esprit.tic.twin.springproject.entities.Etudiant;
+import com.esprit.tic.twin.springproject.entities.Tache;
 import com.esprit.tic.twin.springproject.repositories.EtudiantRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,5 +37,10 @@ public class EtudiantService implements IEtudiantService{
     @Override
     public void removeEtudiant(Long idEtudiant) {
         etudiantRepository.deleteById(idEtudiant);
+    }
+
+    @Override
+    public List<Tache> addTasksAndAffectToEtudiant(List<Task> tasks, String nomEt, String prenomEt) {
+        return null;
     }
 }

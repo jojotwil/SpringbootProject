@@ -26,7 +26,7 @@ public class Chambre implements Serializable {
     @Column(name = "typeC")
     private TypeChambre typeC;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Set<Reservation> reservation;
     @ManyToOne
     private Bloc bloc;

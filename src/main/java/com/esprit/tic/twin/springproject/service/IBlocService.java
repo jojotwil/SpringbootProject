@@ -14,4 +14,5 @@ public interface IBlocService {
 
     List<Bloc> findBlocsByUniversityName(String nom);
     List<Bloc> retrieveBlocByUniversity(String nom);
+    void listChambresParBloc();
 }

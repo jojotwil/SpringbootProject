@@ -30,7 +30,7 @@ public class Bloc implements Serializable{
     @ManyToOne
      Foyer foyer;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="bloc")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="bloc",fetch = FetchType.EAGER)
     private Set<Chambre> chambres;
 
 
